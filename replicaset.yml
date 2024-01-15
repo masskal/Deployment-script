@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: ReplicaSet #creating replicaset
+metadata:
+  name: replicasetMark #name of replicaset
+spec:
+  replicas: 5 #we are creating 5 replicas
+  selector:
+    matchlabels:
+      myname: akshat #which should match the source pod with label myname: ashok
+  template:
+    metadata:
+      name: templateforreplica #the name of the source pod
+      labels:
+        myname: akshat #this is the label of source pod. it should match the selector above
+    spec:
+      containers:
+        - name: php-redis
+          image: nginx
