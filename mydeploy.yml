@@ -1,5 +1,5 @@
 kind: Deployment
-apiVersion: apps/vi
+apiVersion: apps/v1
 metadata:
   name: mydep
 spec:
