@@ -1,0 +1,13 @@
+#multipod
+kind: Pod
+apiVersion: v1
+metadata:
+  name: multipod
+spec:
+  containers:
+    - name: c01
+      image: ubuntu
+      command: ["/bin/bash","-c","while true; do echo hello world; sleep 10; done"]
+    - name: c02
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo hello world2; sleep 20; done"]
